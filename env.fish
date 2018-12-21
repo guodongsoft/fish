@@ -8,9 +8,7 @@ set -x EDITOR emacs
 set -x VISUAL "emacsclient -nw"
 
 # for ruby
-#if test -x "`which ruby`"
-#  set fish_user_paths $HOME/.gem/ruby/2.1.0/bin $fish_user_paths
-#end
+eval (rbenv init - | source)
 
 # for go
 if test -x go
@@ -36,8 +34,6 @@ function local_bin
   end
 end
 local_bin
-
-eval (rbenv init - | source)
 
 export MECAB_PATH=/Users/dongguo/work/project/mbv/poc/mecab/binary/bin
 set fish_user_paths $fish_user_paths $MECAB_PATH
