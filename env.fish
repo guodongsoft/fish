@@ -3,8 +3,8 @@ export LANG=ja_JP.UTF-8
 export LD_LIBRARY_PATH=/usr/local/lib
 export LIBRARY_PATH=/usr/local/lib
 export CPATH=/usr/local/include
-export NODE_PATH=/usr/local/lib/node_modules
 export PYTHONPATH=$HOME/Library/Python/2.7/lib/python/site-packages
+export NODE_PATH=/usr/local/lib/node_modules
 
 set -x EDITOR emacs
 set -x VISUAL "emacsclient -nw"
@@ -40,4 +40,5 @@ local_bin
 export MECAB_PATH=/Users/dongguo/work/project/mbv/poc/mecab/binary/bin
 set fish_user_paths $fish_user_paths $MECAB_PATH
 
-set fish_user_paths $HOME/Library/Python/2.7/bin $fish_user_paths
+export PYTHON=$HOME/Library/Python/2.7/bin
+set fish_user_paths $PYTHON $fish_user_paths
