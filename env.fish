@@ -1,10 +1,10 @@
-export TERM=xterm-256color
-export LANG=ja_JP.UTF-8
-export LD_LIBRARY_PATH=/usr/local/lib
-export LIBRARY_PATH=/usr/local/lib
-export CPATH=/usr/local/include
-export PYTHONPATH=$HOME/Library/Python/2.7/lib/python/site-packages
-export NODE_PATH=/usr/local/lib/node_modules
+set -x TERM xterm-256color
+set -x LANG ja_JP.UTF-8
+set -x LD_LIBRARY_PATH /usr/local/lib
+set -x LIBRARY_PATH /usr/local/lib
+set -x CPATH /usr/local/include
+set -x PYTHONPATH $HOME/Library/Python/2.7/lib/python/site-packages
+set -x NODE_PATH /usr/local/lib/node_modules
 
 set -x EDITOR emacs
 set -x VISUAL "emacsclient -nw"
@@ -37,8 +37,8 @@ function local_bin
 end
 local_bin
 
-export MECAB_PATH=/Users/dongguo/work/project/mbv/poc/mecab/binary/bin
+set -x MECAB_PATH /Users/dongguo/work/project/mbv/poc/mecab/binary/bin
 set fish_user_paths $fish_user_paths $MECAB_PATH
 
-export PYTHON=$HOME/Library/Python/2.7/bin
+set -x PYTHON $HOME/Library/Python/2.7/bin
 set fish_user_paths $PYTHON $fish_user_paths
