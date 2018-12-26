@@ -4,6 +4,7 @@ set -x LD_LIBRARY_PATH /usr/local/lib
 set -x LIBRARY_PATH /usr/local/lib
 set -x CPATH /usr/local/include
 set -x NODE_PATH /usr/local/lib/node_modules
+set -x MANPATH "/usr/local/opt/findutils/libexec/gnuman $MANPATH"
 
 set -x EDITOR emacs
 set -x VISUAL "emacsclient -nw"
@@ -47,3 +48,6 @@ function local_bin
   end
 end
 local_bin
+
+set fish_user_paths $HOME/.cargo/bin $fish_user_paths
+set fish_user_paths /usr/local/opt/findutils/libexec/gnubin $fish_user_paths
