@@ -3,14 +3,25 @@ set -x LANG ja_JP.UTF-8
 set -x LD_LIBRARY_PATH /usr/local/lib
 set -x LIBRARY_PATH /usr/local/lib
 set -x CPATH /usr/local/include
-set -x PYTHONPATH $HOME/Library/Python/2.7/lib/python/site-packages
 set -x NODE_PATH /usr/local/lib/node_modules
 
 set -x EDITOR emacs
 set -x VISUAL "emacsclient -nw"
 
-# for ruby
-eval (rbenv init - | source)
+if test (uname) = "Linux"
+  # for ruby
+  status --is-interactive; and source (rbenv init - | sed 's/setenv/set -gx/' | psub)
+else
+  # for ruby
+  eval (rbenv init - | source)
+
+  set -x PYTHONPATH $HOME/Library/Python/2.7/lib/python/site-packages
+  set -x PYTHON $HOME/Library/Python/2.7/bin
+  set fish_user_paths $PYTHON $fish_user_paths
+
+  set -x MECAB_PATH /Users/dongguo/work/project/mbv/poc/mecab/binary/bin
+  set fish_user_paths $fish_user_paths $MECAB_PATH
+end
 
 # for go
 if test -x go
@@ -36,9 +47,3 @@ function local_bin
   end
 end
 local_bin
-
-set -x MECAB_PATH /Users/dongguo/work/project/mbv/poc/mecab/binary/bin
-set fish_user_paths $fish_user_paths $MECAB_PATH
-
-set -x PYTHON $HOME/Library/Python/2.7/bin
-set fish_user_paths $PYTHON $fish_user_paths
