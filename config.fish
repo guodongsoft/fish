@@ -8,11 +8,11 @@ if status --is-login
 end
 
 if test -z $INSIDE_EMACS
+  # Use powerline
   function fish_prompt
     powerline-shell --shell bare $status
   end
-end
-
-function dired
-  emacsclient -e "(dired \"$PWD\")"
+else
+  # Hide right prompt for emacs
+  function fish_right_prompt; end
 end
