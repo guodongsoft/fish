@@ -22,6 +22,8 @@ else
 
   set -x MECAB_PATH /Users/dongguo/work/project/mbv/poc/mecab/binary/bin
   set fish_user_paths $fish_user_paths $MECAB_PATH
+
+  set fish_user_paths /usr/local/opt/findutils/libexec/gnubin $fish_user_paths
 end
 
 # for go
@@ -50,4 +52,3 @@ end
 local_bin
 
 set fish_user_paths $HOME/.cargo/bin $fish_user_paths
-set fish_user_paths /usr/local/opt/findutils/libexec/gnubin $fish_user_paths
