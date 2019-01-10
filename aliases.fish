@@ -11,9 +11,14 @@ alias sbcl 'rlwrap sbcl'
 alias node_es6 'node --experimental-modules'
 
 # alias for emacs
-set EMACS_HOME /Applications/Emacs.app/Contents/MacOS
-alias emacs "$EMACS_HOME/Emacs -nw"
-alias em "$EMACS_HOME/Emacs -nw"
+if test (uname) = "Linux"
+  alias emacs "emacs -nw"
+  alias em "emacs -nw"
+else
+  set EMACS_HOME /Applications/Emacs.app/Contents/MacOS
+  alias emacs "$EMACS_HOME/Emacs -nw"
+  alias em "$EMACS_HOME/Emacs -nw"
+end
 
 # alias for git
 alias gst "git status"
