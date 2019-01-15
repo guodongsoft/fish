@@ -4,15 +4,19 @@
 
 # 環境変数読み込み
 if status --is-login
-  . ~/.config/fish/env.fish
+    . ~/.config/fish/env.fish
 end
 
 if test -z $INSIDE_EMACS
-  # Use powerline
-  function fish_prompt
-    powerline-shell --shell bare $status
-  end
+    # Use powerline
+    function fish_prompt
+        powerline-shell --shell bare $status
+    end
 else
-  # Hide right prompt for emacs
-  function fish_right_prompt; end
+    function fish_title
+    end
+
+    # Hide right prompt for emacs
+    function fish_right_prompt
+    end
 end
