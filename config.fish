@@ -13,6 +13,7 @@ if test -z $INSIDE_EMACS
     powerline-shell --shell bare $status
   end
 else
+  function fish_title; end
   # Hide right prompt for emacs
   function fish_right_prompt; end
 end
