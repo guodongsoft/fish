@@ -27,11 +27,9 @@ else
 end
 
 # for go
-if test -x go
-  set -x GOPATH $HOME/go $HOME/work/project/mbv/go $HOME/work/go/study/goeg $HOME/work/go/test
-  set fish_user_paths $GOROOT/bin $fish_user_paths
-  set fish_user_paths $HOME/go/bin $fish_user_paths
-end
+set -x GOPATH $HOME/go $HOME/work/project/mbv/go $HOME/work/go/study/goeg $HOME/work/go/test
+set fish_user_paths $GOROOT/bin $fish_user_paths
+set fish_user_paths $HOME/go/bin $fish_user_paths
 
 # my bin
 set fish_user_paths $HOME/bin $fish_user_paths
