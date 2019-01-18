@@ -27,7 +27,6 @@ else
 end
 
 # for go
-#set -x GOPATH $HOME/go $HOME/work/project/mbv/go $HOME/work/go/study/goeg $HOME/work/go/test
 set -x GOPATH $HOME/go
 set fish_user_paths $GOROOT/bin $fish_user_paths
 set fish_user_paths $HOME/go/bin $fish_user_paths
